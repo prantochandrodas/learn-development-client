@@ -3,6 +3,7 @@ import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Registration from "../Components/Registration/Registration";
 import Main from "../Layouts.js/Main";
+import PrivetRoute from "./PrivetRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -19,7 +20,7 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/courses',
-                element:<Courses></Courses>
+                element:<PrivetRoute><Courses></Courses></PrivetRoute>
             },
             {
                 path:'login',
