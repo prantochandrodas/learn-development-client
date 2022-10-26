@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 const Category = ({ category }) => {
  
     return (
-        <div style={{width:'100%', height:'100%' ,marginTop:'40px'}}>
+        <div style={{height:"100%",  padding:'5px',borderRadius:"5px", boxShadow:'10px 5px 5px gray' }}>
+             
             <CardGroup>
-                <Card className='' style={{margin:'30px 0'}}>
-                    <Card.Img variant="top" src={category.course_Img} style={{height:'250px',width:'100%'}} />
-                    <Card.Body>
+                <Card className='border-0' style={{margin:'30px 0'}}>
+                    <Card.Img variant="top" src={category.course_Img} style={{width:'100%',height:'250px'}} />
+                    <Card.Body className='d-flex justify-content-between mt-3'>
                         <Card.Title>{category.name}</Card.Title>
-                    <Link to={`/category/${category.id}`}><Button variant='primary mt-2'>Details</Button></Link>
+                        <Link to={`/category/${category.id}`}><Button variant='primary'>Details</Button></Link>
                     </Card.Body>
                     
                 </Card>

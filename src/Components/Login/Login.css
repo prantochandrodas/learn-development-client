@@ -1,0 +1,8 @@
+.FormWidth{
+    width: 25%;
+}
+@media only screen and (max-width:688px){
+    .FormWidth{
+        width: 100%;
+    }
+}

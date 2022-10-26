@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Button, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../Assets/img/siteLogo.webp';
+import logo from '../../Assets/img/images2.png';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { FaUser } from 'react-icons/fa';
 import './Header.css';
@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar collapseOnSelect className=' ' expand="lg" bg="light" variant="light">
+            <Navbar collapseOnSelect className='headerBg' expand="lg"  variant="light">
 
                 <div className='container'>
                     <Navbar.Brand><Link to='/' className='ms-4'
@@ -33,8 +33,8 @@ const Header = () => {
                             textDecoration: 'none',
                             fontSize: '25px',
                             fontWeight: 'bolder',
-                            color: 'black'
-                        }}><img src={logo} alt="" style={{ height: '40px' }} /> Learn Development</Link></Navbar.Brand>
+                            color: 'white'
+                        }}><img src={logo} alt="" style={{ height: '40px', }} /> Learn Development</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="prantsLink ms-auto">

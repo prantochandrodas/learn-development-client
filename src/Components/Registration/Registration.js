@@ -34,7 +34,7 @@ const Registration = () => {
         });
     }
     return (
-        <div className='w-lg-25 mx-auto border p-3'>
+        <div className='FormWidth mx-auto border p-3 my-5'>
                 <h1>Register</h1>
               <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">

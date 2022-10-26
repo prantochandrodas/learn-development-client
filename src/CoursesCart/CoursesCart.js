@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CoursesCart = ({course}) => {
     return (
-        <div className='container'>
+        <div className='container w-75'>
         <CardGroup>
             <Card className='' style={{margin:'30px 0'}}>
                 <Card.Img variant="top" src={course.course_Img} style={{height:'250px',width:'100%'}} />

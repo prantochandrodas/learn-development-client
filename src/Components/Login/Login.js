@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import './Login.css';
 const Login = () => {
     const [error,setError]=useState('');
     
@@ -57,7 +58,7 @@ const Login = () => {
         
     }
     return (
-        <div className='w-lg-25 mx-auto border p-3'>
+        <div className='FormWidth mx-auto border p-3 my-5'>
             <h1 className='mb-2'>Login</h1>
              <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -72,7 +73,7 @@ const Login = () => {
             </Form.Group>
 
             <Link to='/register'>Create a new account</Link><br />
-            <Button variant="primary" type="submit" className='mt-2'>
+            <Button variant="primary" type="submit" className='mt-2 w-100 '>
                 Login
             </Button>
             <br />

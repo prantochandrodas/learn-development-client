@@ -1,16 +1,23 @@
 .header-container{
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(7, 57, 107);
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    color: white;
+}
+.header-container h3{
+    font-size: 50px;
+}
+.header-container p{
+    font-size: 25px;
 }
 .categories{
     
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
+  
   
 }
 @media only screen and (max-width:688px){

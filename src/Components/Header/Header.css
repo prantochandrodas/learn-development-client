@@ -1,6 +1,14 @@
 .prantsLink a{
-    color: black;
+    color: white;
     margin-left: 20px;
     text-decoration: none;
     font-size: 20px;
+    margin-top: 10px;
+}
+.prantsLink a:hover{
+    color: orangered;
+    cursor: pointer;
+}
+.headerBg{
+    background-color: rgb(7, 57, 107);
 }
