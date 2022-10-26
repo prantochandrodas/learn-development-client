@@ -1,46 +1,46 @@
-// import React, { createContext } from 'react';
-// import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
-// import app from '../Firebase/Firebase-config';
-// import { useEffect } from 'react';
-// import { useState } from 'react';
-// export const AuthContext = createContext();
-// const auth = getAuth(app);
+import React, { createContext } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import app from '../Firebase/Firebase-config';
+import { useEffect } from 'react';
+import { useState } from 'react';
+export const AuthContext = createContext();
+const auth = getAuth(app);
 
-// const AuthProvider = ({ children }) => {
-//     const [user,setUser]=useState(null);
-//     const createUser = (email, password) => {
+const AuthProvider = ({ children }) => {
+    const [user,setUser]=useState(null);
+    const createUser = (email, password) => {
 
-//         return createUserWithEmailAndPassword(auth, email, password)
-//     }
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
 
-//     const signIn = (email, password) => {
+    const signIn = (email, password) => {
         
-//         return signInWithEmailAndPassword(auth, email, password);
-//     }
+        return signInWithEmailAndPassword(auth, email, password);
+    }
     
-//     const logOut = () => {
+    const logOut = () => {
       
-//         return signOut(auth);
-//     }
+        return signOut(auth);
+    }
 
-//     useEffect(()=>{
-//         const unSubcribe=onAuthStateChanged(auth,(currentUser)=>{
-//             setUser(currentUser);
-//         });
-//         return ()=>{
-//             unSubcribe();
-//         }
-//     }
-//     ,[])
+    useEffect(()=>{
+        const unSubcribe=onAuthStateChanged(auth,(currentUser)=>{
+            setUser(currentUser);
+        });
+        return ()=>{
+            unSubcribe();
+        }
+    }
+    ,[])
 
-//     const authInfo = {user, createUser,signIn ,logOut}
-//     return (
-//         <div>
-//             <AuthContext.Provider value={authInfo}>
-//                 {children}
-//             </AuthContext.Provider>
-//         </div>
-//     );
-// };
+    const authInfo = {user, createUser,signIn ,logOut}
+    return (
+        <div>
+            <AuthContext.Provider value={authInfo}>
+                {children}
+            </AuthContext.Provider>
+        </div>
+    );
+};
 
-// export default AuthProvider;
+export default AuthProvider;
