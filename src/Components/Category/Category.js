@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Category = ({ category }) => {
  
     return (
-        <div style={{width:'100%', height:'300px' ,margin:'20PX 0'}}>
+        <div style={{width:'100%', height:'100%' ,marginTop:'40px'}}>
             <CardGroup>
                 <Card className='' style={{margin:'30px 0'}}>
                     <Card.Img variant="top" src={category.course_Img} style={{height:'250px',width:'100%'}} />

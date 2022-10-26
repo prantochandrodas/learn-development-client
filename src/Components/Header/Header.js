@@ -52,7 +52,7 @@ const Header = () => {
                             {dark ?
                                 <Button onClick={handelDarkState} variant='secondary' className='ms-2'>LightMode</Button> : <Button onClick={handelDarkState} variant='dark' className='ms-2'>Dark</Button>}
                             {
-                                user?.photoURL? <Image src={user.photoURL} roundedCircle style={{height:'40px',marginLeft:'20px'}}></Image> : <div style={{fontSize:'30px' ,marginLeft:'20px'}}><FaUser></FaUser></div>
+                                user?.photoURL? <Image src={user.photoURL} roundedCircle style={{height:'40px',marginLeft:'20px'}} title={user?.displayName}></Image> : <div style={{fontSize:'30px' ,marginLeft:'20px'}}><FaUser></FaUser></div>
                             }    
                         </Nav>
                         <Nav>

@@ -6,14 +6,13 @@ const Course = () => {
     const data = useLoaderData();
 
     return (
-        <div className='container my-5'>
+        <div className='container my-5 w-75'>
             <Card >
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={data.picture} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{data.category_name}</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                       {data.about}
                     </Card.Text>
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>

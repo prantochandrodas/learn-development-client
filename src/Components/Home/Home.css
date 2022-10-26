@@ -13,3 +13,9 @@
     gap: 30px;
   
 }
+@media only screen and (max-width:688px){
+    .categories{
+        display: block;
+        
+    }
+}
