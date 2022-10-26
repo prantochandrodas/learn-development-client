@@ -1,0 +1,15 @@
+.course-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+   
+}
+.courses-list{
+    background-color: rgb(240, 240, 240);
+    height: 100%;
+}
+.courses-cart{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    padding: 20px;
+}

@@ -9,7 +9,7 @@ import './Header.css';
 const Header = () => {
     const [dark, setDark] = useState(false);
     const { user, logOut } = useContext(AuthContext);
-    console.log(user);
+  
     const handelLogout = () => {
         logOut()
             .then(() => { })
@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar collapseOnSelect className='mb-4 ' expand="lg" bg="light" variant="light">
+            <Navbar collapseOnSelect className=' ' expand="lg" bg="light" variant="light">
 
                 <div className='container'>
                     <Navbar.Brand><Link to='/' className='ms-4'

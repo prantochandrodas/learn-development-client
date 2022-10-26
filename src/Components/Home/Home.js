@@ -6,7 +6,7 @@ const Home = () => {
     const categories = useLoaderData();
     return (
         <div className='container'>
-            <div className='text-center header-container'>
+            <div className='text-center header-container mt-4'>
                 <div>
                     <h3 className=''>Learn</h3>
                     <p style={{ fontSize: "20px" }}>Explore our structured learning paths to discover everything you need to <br /> know about building for the modern web.</p>

@@ -23,7 +23,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+             
                 form.reset();
                 setError('');
                 navigate(from,{replace:true});
@@ -40,7 +40,7 @@ const Login = () => {
         googleSignin(provider)
         .then(result=>{
             const user=result.user;
-            console.log(user);
+           
             navigate('/');
         })
         .then(e=>setError(e.massage));
@@ -50,14 +50,14 @@ const Login = () => {
         githubSignin(githubProvider)
         .then(result=>{
             const user=result.user;
-            console.log(user);
+          
             navigate('/');
         })
         .then(e=>setError(e.massage));
         
     }
     return (
-        <div className='w-25 mx-auto'>
+        <div className='w-25 mx-auto border p-3'>
             <h1 className='mb-2'>Login</h1>
              <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">

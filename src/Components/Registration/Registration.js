@@ -22,7 +22,7 @@ const Registration = () => {
         createUser(email, password)
         .then(result => {
             const user = result.user;
-            console.log(user);
+       
             setError('');
             form.reset();
             navigate('/');
@@ -34,7 +34,7 @@ const Registration = () => {
         });
     }
     return (
-        <div className='w-50 mx-auto'>
+        <div className='w-25 mx-auto border p-3'>
                 <h1>Register</h1>
               <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">

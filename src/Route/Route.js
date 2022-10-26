@@ -1,3 +1,4 @@
+import Course from "../Components/Course/Course";
 import Courses from "../Components/Courses/Courses";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
@@ -17,10 +18,13 @@ export const router=createBrowserRouter([
                     return fetch('http://localhost:5000/category')
                 },
                 element:<Home></Home>
-            },
+            }, 
             {
                 path:'/courses',
-                element:<PrivetRoute><Courses></Courses></PrivetRoute>
+                loader:()=>{
+                    return fetch('http://localhost:5000/category')
+                },
+                element:<Courses></Courses>
             },
             {
                 path:'login',
@@ -29,6 +33,13 @@ export const router=createBrowserRouter([
             {
                 path:'register',
                 element:<Registration></Registration>
+            },
+            {
+                path:'/category/:id',
+                loader:({params})=>{
+                    return fetch(`http://localhost:5000/category/${params.id}`)
+                },
+                element:<Course></Course>
             }
 
         ],
