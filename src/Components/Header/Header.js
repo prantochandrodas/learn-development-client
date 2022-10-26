@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { Button, Nav, Navbar } from 'react-bootstrap';
+import { Button, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/img/siteLogo.webp';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 import './Header.css';
 const Header = () => {
-    const [dark,setDark]=useState(false);
-    const { user,logOut } = useContext(AuthContext);
-    const handelLogout=()=>{
+    const [dark, setDark] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user);
+    const handelLogout = () => {
         logOut()
-        .then(() => { })
+            .then(() => { })
             .catch(error => console.error(error))
     }
-    const handelDarkState=()=>{
-        if(dark){
+    const handelDarkState = () => {
+        if (dark) {
             setDark(false);
-        }else{
+        } else {
             setDark(true);
         }
     }
-  
+
     return (
         <div>
             <Navbar collapseOnSelect className='mb-4 ' expand="lg" bg="light" variant="light">
@@ -41,14 +43,17 @@ const Header = () => {
                             <Link to='/courses'> FAQ</Link>
                             <Link to='/courses'>Blog</Link>
                             {user?.uid ?
-                                <Button onClick={handelLogout} className='ms-3'>Logout</Button>
+                                <Button onClick={handelLogout} className='mx-3'>Logout</Button>
                                 : <>
                                     <Link to='/login'>Loin</Link>
                                     <Link to='register'>Register</Link>
                                 </>
-                            } 
-                          {dark?
-                            <Button onClick={handelDarkState} variant='secondary'>LightMode</Button>:  <Button onClick={handelDarkState} variant='dark'>Dark</Button>}
+                            }
+                            {dark ?
+                                <Button onClick={handelDarkState} variant='secondary' className='ms-2'>LightMode</Button> : <Button onClick={handelDarkState} variant='dark' className='ms-2'>Dark</Button>}
+                            {
+                                user?.photoUrl? <Image src={user.photoUrl} style={{height:'60px'}}></Image> : <div style={{fontSize:'30px' ,marginLeft:'20px'}}><FaUser></FaUser></div>
+                            }    
                         </Nav>
                         <Nav>
 

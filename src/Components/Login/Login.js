@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 const Login = () => {
     const [error,setError]=useState('');
@@ -46,7 +46,8 @@ const Login = () => {
                 <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Link to='/register'>Create a new account</Link><br />
+            <Button variant="primary" type="submit" className='mt-2'>
                 Login
             </Button>
             <Form.Text className="text-danger">
