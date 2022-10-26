@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -5,9 +6,11 @@ import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 const Registration = () => {
+    
     const navigate=useNavigate();
     const [error, setError] = useState('');
-    const {createUser}=useContext(AuthContext);
+    const {createUser,googleSignin}=useContext(AuthContext);
+  
     const handleSubmit=event=>{
         event.preventDefault();
         const form = event.target;
@@ -56,6 +59,8 @@ const Registration = () => {
             <Button variant="primary" type="submit" >
                 Register
             </Button>
+            <br />
+         
             <Form.Text className="text-danger">
                 {error}
             </Form.Text>

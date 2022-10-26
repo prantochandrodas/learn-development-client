@@ -1,16 +1,19 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 const Login = () => {
     const [error,setError]=useState('');
+    
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const navigate=useNavigate();
-    const {signIn}=useContext(AuthContext);
+    const {signIn,googleSignin,githubSignin}=useContext(AuthContext);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -31,8 +34,30 @@ const Login = () => {
             })
            
     }
+
+    const provider=new GoogleAuthProvider();
+    const handelGoogleSignIn=()=>{
+        googleSignin(provider)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+            navigate('/');
+        })
+        .then(e=>setError(e.massage));
+    }
+    const githubProvider=new GithubAuthProvider();
+    const handelGithubSignIn=()=>{
+        githubSignin(githubProvider)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+            navigate('/');
+        })
+        .then(e=>setError(e.massage));
+        
+    }
     return (
-        <div className='w-50 mx-auto'>
+        <div className='w-25 mx-auto'>
             <h1 className='mb-2'>Login</h1>
              <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -50,7 +75,10 @@ const Login = () => {
             <Button variant="primary" type="submit" className='mt-2'>
                 Login
             </Button>
-            <Form.Text className="text-danger">
+            <br />
+            <Button variant='success' onClick={handelGoogleSignIn} className="mt-3" style={{width:'100%'}}><FaGoogle></FaGoogle> Login With Google</Button><br />
+            <Button variant='dark' onClick={handelGithubSignIn} className="mt-3" style={{width:'100%'}}><FaGithub></FaGithub> Login With Github</Button>
+            <Form.Text className="text-danger mt-3">
                 {error}
             </Form.Text>
         </Form>

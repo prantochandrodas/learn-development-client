@@ -45,14 +45,14 @@ const Header = () => {
                             {user?.uid ?
                                 <Button onClick={handelLogout} className='mx-3'>Logout</Button>
                                 : <>
-                                    <Link to='/login'>Loin</Link>
-                                    <Link to='register'>Register</Link>
+                                    <Link to='/login'>Login</Link>
+                                    <Link to='/register'>Register</Link>
                                 </>
                             }
                             {dark ?
                                 <Button onClick={handelDarkState} variant='secondary' className='ms-2'>LightMode</Button> : <Button onClick={handelDarkState} variant='dark' className='ms-2'>Dark</Button>}
                             {
-                                user?.photoUrl? <Image src={user.photoUrl} style={{height:'60px'}}></Image> : <div style={{fontSize:'30px' ,marginLeft:'20px'}}><FaUser></FaUser></div>
+                                user?.photoURL? <Image src={user.photoURL} roundedCircle style={{height:'40px',marginLeft:'20px'}}></Image> : <div style={{fontSize:'30px' ,marginLeft:'20px'}}><FaUser></FaUser></div>
                             }    
                         </Nav>
                         <Nav>
