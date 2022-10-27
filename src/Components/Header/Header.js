@@ -39,9 +39,9 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="prantsLink ms-auto">
                             <Link to='/'>Home</Link>
+                            <Link to='/faq'>FAQ</Link>
                             <Link to='/courses'>Courses</Link>
-                            <Link to='/courses'> FAQ</Link>
-                            <Link to='/courses'>Blog</Link>
+                            <Link to='/blogs'>Blog</Link>
                             {user?.uid ?
                                 <Button onClick={handelLogout} className='mx-3'>Logout</Button>
                                 : <>

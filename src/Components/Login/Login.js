@@ -42,7 +42,7 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
            
-            navigate('/');
+            navigate(from,{replace:true});
         })
         .then(e=>setError(e.massage));
     }
@@ -52,7 +52,7 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
           
-            navigate('/');
+            navigate(from,{replace:true});
         })
         .then(e=>setError(e.massage));
         
@@ -83,6 +83,7 @@ const Login = () => {
                 {error}
             </Form.Text>
         </Form>
+        
         </div>
     );
 };

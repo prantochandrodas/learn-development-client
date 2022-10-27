@@ -13,13 +13,13 @@ const Course = () => {
             <Card.Body>
               <Card.Title>{data.name}</Card.Title>
               <Card.Text>
-                    {data?.about.length>250 ?
-                       <>{data.about.slice(0,250)+'...'}<Link to={`/category/${data.id}`}>ReadMore</Link></> :
+                    {data?.about?.length>250 ?
+                       <>{data.about.slice(0,250)+'...'}<Link to={`/post/${data.id}`}>ReadMore</Link></> :
                         data.about}
 
                       <h4 className='my-3'>Get the premium access for all the  facility</h4>
               </Card.Text>
-              <Button variant='success' className='w-100' style={{fontSize:'20px',padding:'10px 0'}}> Premium Access</Button>
+              <Link to={`/post/${data.id}`}> <Button variant='success' className='w-100' style={{fontSize:'20px',padding:'10px 0'}}> Premium Access</Button></Link>
             </Card.Body>
           </Card>
         </div>
